@@ -32,7 +32,7 @@ let whichTruthy = false || "" || [2, 3].length || { thisIsTruth: true };
 
 let userName = prompt("이름을 입력해주세요.", "");
 
-if (userName === "admin") {
+if (userName?.toLowerCase() === "admin") {
   let pw = prompt("비밀번호를 입력해주세요.", "");
 
   if (pw === "TheMaster") {
@@ -42,7 +42,7 @@ if (userName === "admin") {
   } else {
     alert("Wrong password");
   }
-} else if (userName === "" || userName === null) {
+} else if (userName.replace(/\s*/g, "") === "" || userName === null) {
   alert("Canceled");
 } else {
   alert("I don't know you");
