@@ -61,18 +61,45 @@ const user = {
       console.log("bar : ", this); //this는 user 객체
     };
 
-    //foo.call(user); //call을 붙여야 user객체로 this가 지정됨.
+    foo.call(user); //call을 붙여야 user객체로 this가 지정됨.
     // foo(); //일반 함수 일땐 this가 window임.
     // bar();
   }, //객체 안에 들어있는 함수 = 메소드
 };
 
-console.log(user.totalGrades()); //270
+user.totalGrades();
+// console.log(user.totalGrades()); //270
 
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
 // pow(numeric: number, powerCount: number): number;
-let pow;
+let pow = (numeric, powercount) => {
+  let result = 1;
+  for (let i = 0; i < powercount; i++) {
+    result *= numeric;
+  }
+  return result;
+};
+
+let powExpression = (numeric, powCount) =>
+  Array(powCount)
+    .fill(null)
+    .reduce((acc) => acc * numeric, 1);
+
+//pow(2,53)
 
 // repeat(text: string, repeatCount: number): string;
-let repeat;
+let repeat = (text, repeatCount) => {
+  let result = "";
+  for (let i = 0; i < repeatCount; i++) {
+    result += text;
+  }
+  return result;
+};
+
+let repeatExpression = (text, repeatCount) =>
+  Array(repeatCount)
+    .fill(null)
+    .reduce((acc) => acc + text, "");
+
+// repeat('hello', 3)
