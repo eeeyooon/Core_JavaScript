@@ -28,7 +28,7 @@ export function removeClass(node,className){
 }
 
 
-function toggleClass(node,className){
+export function toggleClass(node,className){
   if(typeof node === 'string') node = getNode(node);
   if(typeof className !== 'string'){
     typeError('toggleClass 함수의 두 번째 인자는 문자 타입 이어야 합니다.');

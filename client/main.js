@@ -25,10 +25,6 @@ import {
 
 
 
- 
-
-
-
 const firstInput = getNode('#firstNumber');
 const secondInput = getNode('#secondNumber');
 const done = getNode('#done');
