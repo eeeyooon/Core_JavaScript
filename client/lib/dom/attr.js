@@ -57,6 +57,9 @@ function setAttr(node, prop, value) {
   if (prop.includes("data")) {
     let rest = prop.slice(5);
     node.dataset[rest] = value;
+    return;
+    //value가 없는 상태에서 includes를 확인할 필요가 없기 때문에 return해줌.
+    //아래 함수는 실행될 필요가 x
   }
   
 
